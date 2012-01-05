@@ -1,5 +1,21 @@
 OVERVIEW
 This project contains additional features that are not available in the main Quartz.Net distribution. The goal of this project is to gather commonly used items built by the community to enhance Quartz.Net. Generic job types, triggers and calendars are probably the main components that this project will contain, but time will tell. I am starting this project because the main Quartz.Net distribution mirrors pretty closely the java version of Quartz and thus anything that is not contained in the java version might be better off in a separate project.
 
+The project is in a very early prototype/concept stage, so beware of the sharp edges.
+
+GETTING STARTED
+To get started, download the source and open the QuartzNetFeaturePack.sln file in Visual Studio AS ADMINISTRATOR. Running VS as administrator is required if you want to run/debug the solution. 
+
+If not already selected, set the Quartz.FeaturePack.CLI project as your startup project. This project starts a Quartz.Net server localy, which is great when debugging. All the configuration files are also in this project so that developing and testing is easy. 
+
+Hit F5 to start the project. If you get a firewall prompt asking for access, you should allow access to the scheduler. Once the scheduler starts successfully, you can visit these URLS to view and RSS feed of:
+
+All scheduled jobs: http://localhost:8000/jobs
+Job execution history: http://localhost:8000/jobs/history
+Currently running jobs: http://localhost:8000/jobs/running
+
 CONTRIBUTING
 Contributions are welcome. Please create a pull request to have your code merged. Also, please configure your GIT client to leave line endings as they are.
+
+LICENSE
+All of the source code in this project is licensed under the Apache License, Version 2.0. This is the same license that Quartz.Net is licensed under.
