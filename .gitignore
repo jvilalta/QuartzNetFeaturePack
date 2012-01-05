@@ -19,7 +19,6 @@
 *.log
 *.lib
 *.sbr
-*.sdf
 ipch/
 obj/
 [Bb]in
