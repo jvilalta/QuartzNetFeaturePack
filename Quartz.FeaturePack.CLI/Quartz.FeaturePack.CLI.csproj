@@ -76,6 +76,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quartz.FeaturePack.Jobs\Quartz.FeaturePack.Jobs.csproj">
+      <Project>{995CD080-0A5E-47C7-8BFC-F1B65BDE0A32}</Project>
+      <Name>Quartz.FeaturePack.Jobs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quartz.FeaturePack.Listeners\Quartz.FeaturePack.Listeners.csproj">
       <Project>{9F447F41-A9CB-4A9D-835B-0BA18F2341BD}</Project>
       <Name>Quartz.FeaturePack.Listeners</Name>
@@ -87,6 +91,10 @@
     <ProjectReference Include="..\Quartz.FeaturePack.Services\Quartz.FeaturePack.Services.csproj">
       <Project>{F59F61F2-9CC9-46D9-BF85-95F16BE267D0}</Project>
       <Name>Quartz.FeaturePack.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Quartz.FeaturePack.Triggers\Quartz.FeaturePack.Triggers.csproj">
+      <Project>{5053A11A-65BD-4B3B-9130-38E42CC998BC}</Project>
+      <Name>Quartz.FeaturePack.Triggers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
