@@ -9,6 +9,9 @@ using System.ServiceModel.Web;
 
 namespace Quartz.FeaturePack.Plugins
 {
+    /// <summary>
+    /// This plugin is responsible for hosting the WCF service that provides RSS feeds for scheduler information.
+    /// </summary>
     public class FeedServicePlugin : ISchedulerPlugin
     {
         public void Initialize(string pluginName, IScheduler scheduler)
