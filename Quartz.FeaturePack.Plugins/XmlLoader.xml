@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<scheduler>
+  <listeners>
+    <add name="" type="">
+      <properties>
+        <name></name>
+        <value></value>
+      </properties>
+    </add>
+    <remove name=""></remove>
+    <clear></clear>
+  </listeners>
+  <calendars></calendars>
+</scheduler>
