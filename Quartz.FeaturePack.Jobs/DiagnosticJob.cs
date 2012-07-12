@@ -17,6 +17,8 @@ namespace Quartz.FeaturePack.Jobs
 		{
 			_Log.InfoFormat("Calendar Names: {0}", string.Join(",", context.Scheduler.GetCalendarNames()));
 			outputMetadata(context.Scheduler.GetMetaData());
+
+			//TODO: dump more data here
 		}
 
 		private void outputMetadata(SchedulerMetaData metaData)

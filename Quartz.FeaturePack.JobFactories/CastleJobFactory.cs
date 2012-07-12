@@ -13,9 +13,11 @@ using System.IO;
 
 namespace Quartz.FeaturePack.JobFactories
 {
+	/// <summary>
+	/// A job factory that uses Windsor Castle to resolve dependencies.
+	/// </summary>
 	public class CastleJobFactory : IJobFactory
 	{
-		public String JobAssemblyDirectory { get; set; }
 		public CastleJobFactory()
 		{
 			_Container = new WindsorContainer(new XmlInterpreter(new ConfigResource("castle")));
@@ -27,6 +29,5 @@ namespace Quartz.FeaturePack.JobFactories
 			return _Container.Resolve(bundle.JobDetail.JobType) as IJob;
 		}
 		private static WindsorContainer _Container;
-
 	}
 }
