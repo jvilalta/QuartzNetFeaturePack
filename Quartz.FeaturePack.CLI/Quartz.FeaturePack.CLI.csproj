@@ -79,6 +79,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Quartz.FeaturePack.JobFactories\Quartz.FeaturePack.JobFactories.csproj">
+      <Project>{7E688816-CF12-4459-8508-4773333A3821}</Project>
+      <Name>Quartz.FeaturePack.JobFactories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quartz.FeaturePack.Jobs\Quartz.FeaturePack.Jobs.csproj">
       <Project>{995CD080-0A5E-47C7-8BFC-F1B65BDE0A32}</Project>
       <Name>Quartz.FeaturePack.Jobs</Name>
