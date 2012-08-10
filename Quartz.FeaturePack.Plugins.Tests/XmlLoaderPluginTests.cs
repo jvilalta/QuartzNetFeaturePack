@@ -21,6 +21,7 @@ namespace Quartz.FeaturePack.Plugins.Tests
 			Assert.IsTrue(plugin.Calendars.ContainsKey("name1"));
 			Assert.AreEqual("description1", plugin.Calendars["name1"].Description);
 		}
+
 		[Test]
 		public void InitializeTestsRequiredFields()
 		{

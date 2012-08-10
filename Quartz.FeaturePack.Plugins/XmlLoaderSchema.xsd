@@ -13,14 +13,17 @@
     <xs:complexType>
       <xs:sequence maxOccurs="1">
         <xs:element name="calendars" type="calendars"></xs:element>
+        <xs:element name="jobs" type="jobs"></xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+
   <xs:complexType name="calendars">
     <xs:sequence maxOccurs="unbounded">
       <xs:element name="cronCalendar" type="cronCalendar" maxOccurs="unbounded" minOccurs="0"></xs:element>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="cronCalendar">
     <xs:sequence maxOccurs="1">
       <xs:element name="name" minOccurs="1"></xs:element>
@@ -30,4 +33,47 @@
       <xs:element name="updateTriggers" minOccurs="0" type="xs:boolean"></xs:element>
     </xs:sequence>
   </xs:complexType>
+
+  <xs:complexType name="jobs">
+    <xs:sequence maxOccurs="1">
+      <xs:element name="job"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="job">
+    <xs:annotation>
+      <xs:documentation>Define a JobDetail</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="group" type="xs:string" minOccurs="0"/>
+      <xs:element name="description" type="xs:string" minOccurs="0"/>
+      <xs:element name="jobType" type="xs:string"/>
+      <xs:sequence minOccurs="0">
+        <xs:element name="durable" type="xs:boolean"/>
+        <xs:element name="recover" type="xs:boolean"/>
+      </xs:sequence>
+      <xs:element name="jobDataMap" type="jobDataMap" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="jobDataMap">
+    <xs:annotation>
+      <xs:documentation>Define a JobDataMap</xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="entry" type="entry"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entry">
+    <xs:annotation>
+      <xs:documentation>Define a JobDataMap entry</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="key" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
 </xs:schema>
