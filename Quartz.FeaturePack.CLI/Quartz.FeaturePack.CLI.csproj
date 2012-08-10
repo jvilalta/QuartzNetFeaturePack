@@ -77,6 +77,9 @@
     <Content Include="quartz_jobs.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="quartz_loader.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quartz.FeaturePack.JobFactories\Quartz.FeaturePack.JobFactories.csproj">

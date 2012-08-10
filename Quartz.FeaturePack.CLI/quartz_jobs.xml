@@ -9,7 +9,6 @@
   </processing-directives>
 
   <schedule>
-
     <job>
         <name>sampleJob</name>
         <group>sampleGroup</group>

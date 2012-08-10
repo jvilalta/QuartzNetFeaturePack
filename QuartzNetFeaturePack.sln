@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.WindowsS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.JobFactories", "Quartz.FeaturePack.JobFactories\Quartz.FeaturePack.JobFactories.csproj", "{7E688816-CF12-4459-8508-4773333A3821}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.Plugins.Tests", "Quartz.FeaturePack.Plugins.Tests\Quartz.FeaturePack.Plugins.Tests.csproj", "{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -120,6 +122,16 @@ Global
 		{7E688816-CF12-4459-8508-4773333A3821}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7E688816-CF12-4459-8508-4773333A3821}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7E688816-CF12-4459-8508-4773333A3821}.Release|x86.ActiveCfg = Release|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

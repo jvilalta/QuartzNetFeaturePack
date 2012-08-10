@@ -1,9 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="XmlLoaderSchema"
-    targetNamespace="http://tempuri.org/XmlLoaderSchema.xsd"
-    elementFormDefault="qualified"
-    xmlns="http://tempuri.org/XmlLoaderSchema.xsd"
-    xmlns:mstns="http://tempuri.org/XmlLoaderSchema.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
+      xmlns="http://quartznet.sourceforge.net/XmlLoaderSchema"
+      targetNamespace="http://quartznet.sourceforge.net/XmlLoaderSchema"
+      elementFormDefault="qualified"
+      version="2.0">
+
+  <xs:element name="schedulerConfiguration">
+    <xs:annotation>
+      <xs:documentation>Root level node</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="1">
+        <xs:element name="calendars" type="calendars"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="calendars">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="cronCalendar" type="cronCalendar" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cronCalendar">
+    <xs:sequence maxOccurs="1">
+      <xs:element name="name" minOccurs="1"></xs:element>
+      <xs:element name="cronExpression" minOccurs="1" type="xs:string"></xs:element>
+      <xs:element name="description" minOccurs="0" type="xs:string"></xs:element>
+      <xs:element name="replaceCalendar" minOccurs="0" type="xs:boolean"></xs:element>
+      <xs:element name="updateTriggers" minOccurs="0" type="xs:boolean"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
 </xs:schema>
