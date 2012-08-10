@@ -54,7 +54,7 @@
         <xs:element name="recover" type="xs:boolean"/>
       </xs:sequence>
       <xs:element name="jobDataMap" type="jobDataMap" minOccurs="0"/>
-      <xs:element name="triggers" type="triggers" minOccurs="1"/>
+      <xs:element name="triggers" type="triggers" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -76,23 +76,16 @@
       <xs:element name="value" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="triggers">
     <xs:sequence maxOccurs="unbounded">
-
+      <xs:element name="simple" type="simpleTrigger"/>
+      <xs:element name="cron" type="cronTrigger"/>
+      <xs:element name="calendarInterval" type="calendarIntervalTrigger"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="triggerType">
-    <xs:annotation>
-      <xs:documentation>Define a Trigger</xs:documentation>
-    </xs:annotation>
-    <xs:choice>
-      <xs:element name="simple" type="simpleTriggerType"/>
-      <xs:element name="cron" type="cronTriggerType"/>
-      <xs:element name="calendar-interval" type="calendarIntervalTriggerType"/>
-    </xs:choice>
-  </xs:complexType>
 
-  <xs:complexType name="abstractTriggerType" abstract="true">
+  <xs:complexType name="abstractTrigger" abstract="true">
     <xs:annotation>
       <xs:documentation>Common Trigger definitions</xs:documentation>
     </xs:annotation>
@@ -100,27 +93,27 @@
       <xs:element name="name" type="xs:string"/>
       <xs:element name="group" type="xs:string" minOccurs="0"/>
       <xs:element name="description" type="xs:string" minOccurs="0"/>
-      <xs:element name="job-name" type="xs:string"/>
-      <xs:element name="job-group" type="xs:string" minOccurs="0"/>
+      <xs:element name="jobName" type="xs:string"/>
+      <xs:element name="jobGroup" type="xs:string" minOccurs="0"/>
       <xs:element name="priority" type="xs:nonNegativeInteger" minOccurs="0"/>
-      <xs:element name="calendar-name" type="xs:string" minOccurs="0"/>
+      <xs:element name="calendarName" type="xs:string" minOccurs="0"/>
       <xs:element name="jobDataMap" type="jobDataMap" minOccurs="0"/>
       <xs:sequence minOccurs="0">
         <xs:choice>
-          <xs:element name="start-time" type="xs:dateTime"/>
-          <xs:element name="start-time-seconds-in-future" type="xs:nonNegativeInteger"/>
+          <xs:element name="startTime" type="xs:dateTime"/>
+          <xs:element name="startTimeSecondsInFuture" type="xs:nonNegativeInteger"/>
         </xs:choice>
         <xs:element name="end-time"  type="xs:dateTime" minOccurs="0"/>
       </xs:sequence>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="simpleTriggerType">
+  <xs:complexType name="simpleTrigger">
     <xs:annotation>
       <xs:documentation>Define a SimpleTrigger</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="abstractTriggerType">
+      <xs:extension base="abstractTrigger">
         <xs:sequence>
           <xs:element name="misfireInstruction" type="simpleTriggerMisfireInstruction" minOccurs="0" />
           <xs:sequence minOccurs="0">
@@ -131,7 +124,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
+
   <xs:simpleType name="repeatCount">
     <xs:annotation>
       <xs:documentation>Number of times to repeat the Trigger (-1 for indefinite)</xs:documentation>
@@ -140,13 +133,13 @@
       <xs:minInclusive value="-1"/>
     </xs:restriction>
   </xs:simpleType>
-  
-  <xs:complexType name="cronTriggerType">
+
+  <xs:complexType name="cronTrigger">
     <xs:annotation>
       <xs:documentation>Define a CronTrigger</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="abstractTriggerType">
+      <xs:extension base="abstractTrigger">
         <xs:sequence>
           <xs:element name="misfireInstruction" type="cronTriggerMisfireInstruction"  minOccurs="0"/>
           <xs:element name="cronExpression" type="cronExpression"/>
@@ -156,12 +149,12 @@
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:complexType name="calendarIntervalTriggerType">
+  <xs:complexType name="calendarIntervalTrigger">
     <xs:annotation>
       <xs:documentation>Define a DateIntervalTrigger</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="abstractTriggerType">
+      <xs:extension base="abstractTrigger">
         <xs:sequence>
           <xs:element name="misfireInstruction" type="dateIntervalTriggerMisfireInstruction"  minOccurs="0"/>
           <xs:element name="repeatInterval" type="xs:nonNegativeInteger"/>
