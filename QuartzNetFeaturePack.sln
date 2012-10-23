@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.Services", "Quartz.FeaturePack.Services\Quartz.FeaturePack.Services.csproj", "{F59F61F2-9CC9-46D9-BF85-95F16BE267D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.Plugins", "Quartz.FeaturePack.Plugins\Quartz.FeaturePack.Plugins.csproj", "{1CAF8B5C-074C-4A6D-8031-379C94B879F9}"
