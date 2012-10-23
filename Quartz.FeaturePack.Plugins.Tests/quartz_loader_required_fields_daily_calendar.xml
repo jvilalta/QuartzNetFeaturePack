@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<schedulerConfiguration xmlns="http://quartznet.sourceforge.net/XmlLoaderSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <calendars>
+    <dailyCalendar>
+      <name>DailyCalendar1</name>
+      <rangeStartingTime>17:00</rangeStartingTime>
+      <rangeEndingTime>18:00</rangeEndingTime>
+    </dailyCalendar>
+  </calendars>
+</schedulerConfiguration>
