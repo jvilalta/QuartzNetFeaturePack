@@ -2,13 +2,16 @@
 <schedulerConfiguration xmlns="http://quartznet.sourceforge.net/XmlLoaderSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <calendars>
     <cronCalendar>
-      <name>name1</name>
-      <cronExpression>
-        cron1
-      </cronExpression>
+      <name>CronCalendar1</name>
+      <cronExpression>* * 0 * * ?</cronExpression>
       <description>
         description1
       </description>
     </cronCalendar>
+    <dailyCalendar>
+      <name>DailyCalendar1</name>
+      <rangeStartingTime>17:00</rangeStartingTime>
+      <rangeEndingTime>18:00</rangeEndingTime>
+    </dailyCalendar>
   </calendars>
 </schedulerConfiguration>

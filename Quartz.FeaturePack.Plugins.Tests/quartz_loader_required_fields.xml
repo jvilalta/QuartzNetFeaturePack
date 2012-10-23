@@ -4,7 +4,7 @@
     <cronCalendar>
       <name>name1</name>
       <cronExpression>
-        0 0 0 * * ?
+        * * 0-20 * * ?
       </cronExpression>
     </cronCalendar>
   </calendars>

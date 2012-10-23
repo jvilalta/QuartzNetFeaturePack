@@ -39,6 +39,9 @@ namespace Quartz.FeaturePack.Plugins
 					case "cronCalendar":
 						calendar = parseCronCalendar(calendarXml);
 						break;
+					case "dailyCalendar":
+						calendar = parseDailyCalendar(calendarXml);
+						break;
 					default:
 						throw new ArgumentOutOfRangeException(string.Format("Calendar type {0} is not supported", type));
 				}
@@ -46,6 +49,24 @@ namespace Quartz.FeaturePack.Plugins
 				Scheduler.AddCalendar(calendarName, calendar, parseReplaceCalendar(calendarXml), parseUpdateTriggers(calendarXml));
 				Calendars.Add(parseCalendarName(calendarXml), calendar);
 			}
+		}
+
+		private ICalendar parseDailyCalendar(XElement calendarXml)
+		{
+			DailyCalendar calendar = new DailyCalendar(parseRangeStartingTime(calendarXml), parseRangeEndingTime(calendarXml));
+			return calendar;
+		}
+
+		private string parseRangeStartingTime(XElement calendarXml)
+		{
+			XNamespace ns = calendarXml.GetDefaultNamespace();
+			return calendarXml.Element(ns + "rangeStartingTime").Value.Trim();
+		}
+
+		private string parseRangeEndingTime(XElement calendarXml)
+		{
+			XNamespace ns = calendarXml.GetDefaultNamespace();
+			return calendarXml.Element(ns + "rangeEndingTime").Value.Trim();
 		}
 
 		private ICalendar parseCronCalendar(XElement calendarXml)
@@ -97,7 +118,7 @@ namespace Quartz.FeaturePack.Plugins
 		private string parseCronExpression(XElement calendarXml)
 		{
 			XNamespace ns = calendarXml.GetDefaultNamespace();
-			return calendarXml.Element(ns + "cronExpression").Value;
+			return calendarXml.Element(ns + "cronExpression").Value.Trim();
 		}
 
 		public void Shutdown()

@@ -21,6 +21,7 @@
   <xs:complexType name="calendars">
     <xs:sequence maxOccurs="unbounded">
       <xs:element name="cronCalendar" type="cronCalendar" maxOccurs="unbounded" minOccurs="0"></xs:element>
+      <xs:element name="dailyCalendar" type="dailyCalendar" maxOccurs="unbounded" minOccurs="0"></xs:element>
     </xs:sequence>
   </xs:complexType>
 
@@ -28,6 +29,17 @@
     <xs:sequence maxOccurs="1">
       <xs:element name="name" minOccurs="1"></xs:element>
       <xs:element name="cronExpression" minOccurs="1" type="cronExpression"></xs:element>
+      <xs:element name="description" minOccurs="0" type="xs:string"></xs:element>
+      <xs:element name="replaceCalendar" minOccurs="0" type="xs:boolean"></xs:element>
+      <xs:element name="updateTriggers" minOccurs="0" type="xs:boolean"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dailyCalendar">
+    <xs:sequence maxOccurs="1">
+      <xs:element name="name" minOccurs="1"></xs:element>
+      <xs:element name="rangeStartingTime" minOccurs="1" type="xs:string"></xs:element>
+      <xs:element name="rangeEndingTime" minOccurs="1" type="xs:string"></xs:element>
       <xs:element name="description" minOccurs="0" type="xs:string"></xs:element>
       <xs:element name="replaceCalendar" minOccurs="0" type="xs:boolean"></xs:element>
       <xs:element name="updateTriggers" minOccurs="0" type="xs:boolean"></xs:element>

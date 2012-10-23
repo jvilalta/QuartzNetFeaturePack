@@ -10,14 +10,13 @@
 
   <schedule>
     <job>
-        <name>sampleJob</name>
-        <group>sampleGroup</group>
-        <description>Sample job for Quartz Server</description>
-        <job-type>Quartz.FeaturePack.Jobs.DiagnosticJob, Quartz.FeaturePack.Jobs</job-type>
-        <durable>true</durable>
-        <recover>false</recover>
+      <name>sampleJob</name>
+      <group>sampleGroup</group>
+      <description>Sample job for Quartz Server</description>
+      <job-type>Quartz.FeaturePack.Jobs.DiagnosticJob, Quartz.FeaturePack.Jobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
     </job>
-
     <trigger>
       <simple>
         <name>sampleSimpleTrigger</name>
@@ -25,9 +24,10 @@
         <description>Simple trigger to simply fire sample job</description>
         <job-name>sampleJob</job-name>
         <job-group>sampleGroup</job-group>
+        <calendar-name>CronCalendar1</calendar-name>
         <misfire-instruction>SmartPolicy</misfire-instruction>
         <repeat-count>-1</repeat-count>
-        <repeat-interval>10000</repeat-interval>
+        <repeat-interval>5000</repeat-interval>
       </simple>
     </trigger>
   </schedule>
