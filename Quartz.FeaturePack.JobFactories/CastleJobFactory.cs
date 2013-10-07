@@ -24,10 +24,17 @@ namespace Quartz.FeaturePack.JobFactories
 			string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 			_Container.Register(AllTypes.FromAssemblyInDirectory(new AssemblyFilter(path)).BasedOn<IJob>().Configure(c => c.LifeStyle.Is(LifestyleType.Transient)));
 		}
+
 		public IJob NewJob(TriggerFiredBundle bundle, IScheduler scheduler)
 		{
 			return _Container.Resolve(bundle.JobDetail.JobType) as IJob;
 		}
+
 		private static WindsorContainer _Container;
-	}
+
+        public void ReturnJob(IJob job)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

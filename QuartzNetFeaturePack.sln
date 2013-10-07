@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.JobFacto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.Plugins.Tests", "Quartz.FeaturePack.Plugins.Tests\Quartz.FeaturePack.Plugins.Tests.csproj", "{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quartz.FeaturePack.NancyWebApi", "Quartz.FeaturePack.NancyWebApi\Quartz.FeaturePack.NancyWebApi.csproj", "{F1C7756A-173C-4DAF-999D-D17AB25C426A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -132,6 +134,16 @@ Global
 		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{65619E50-D5D4-4DBF-B96D-FDFD589EBF2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F1C7756A-173C-4DAF-999D-D17AB25C426A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
