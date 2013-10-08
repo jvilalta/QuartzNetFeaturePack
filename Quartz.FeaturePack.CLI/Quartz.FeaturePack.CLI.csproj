@@ -97,6 +97,10 @@
       <Project>{9F447F41-A9CB-4A9D-835B-0BA18F2341BD}</Project>
       <Name>Quartz.FeaturePack.Listeners</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Quartz.FeaturePack.NancyWebApi\Quartz.FeaturePack.NancyWebApi.csproj">
+      <Project>{f1c7756a-173c-4daf-999d-d17ab25c426a}</Project>
+      <Name>Quartz.FeaturePack.NancyWebApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Quartz.FeaturePack.Plugins\Quartz.FeaturePack.Plugins.csproj">
       <Project>{1CAF8B5C-074C-4A6D-8031-379C94B879F9}</Project>
       <Name>Quartz.FeaturePack.Plugins</Name>

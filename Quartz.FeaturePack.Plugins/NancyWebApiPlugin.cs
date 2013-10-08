@@ -12,11 +12,13 @@ namespace Quartz.FeaturePack.Plugins
         public void Initialize(string pluginName, IScheduler sched)
         {
             _NancyHost = new Nancy.Hosting.Self.NancyHost(new Uri("http://localhost:8888"));
+            Scheduler = sched;
         }
 
         public void Shutdown()
         {
             _NancyHost.Stop();
+            Scheduler = null;
         }
 
         public void Start()
@@ -24,6 +26,6 @@ namespace Quartz.FeaturePack.Plugins
             _NancyHost.Start();
         }
         private static NancyHost _NancyHost;
-
+        public static IScheduler Scheduler;
     }
 }
