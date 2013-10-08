@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JsonScheduler.cs" />
     <Compile Include="SchedulerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
