@@ -24,7 +24,6 @@
         <description>Simple trigger to simply fire sample job</description>
         <job-name>sampleJob</job-name>
         <job-group>sampleGroup</job-group>
-        <calendar-name>CronCalendar1</calendar-name>
         <misfire-instruction>SmartPolicy</misfire-instruction>
         <repeat-count>-1</repeat-count>
         <repeat-interval>5000</repeat-interval>
