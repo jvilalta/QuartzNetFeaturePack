@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JobExecutionContextsModule.cs" />
     <Compile Include="JobsModule.cs" />
+    <Compile Include="JsonJobExecutionContext.cs" />
     <Compile Include="JsonJobListener.cs" />
     <Compile Include="JsonScheduler.cs" />
     <Compile Include="JsonSchedulerContext.cs" />

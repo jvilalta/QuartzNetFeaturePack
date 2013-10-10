@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Common.Logging;
+using System.Threading;
 
 namespace Quartz.FeaturePack.Jobs
 {
@@ -17,7 +18,7 @@ namespace Quartz.FeaturePack.Jobs
 		{
 			_Log.InfoFormat("Calendar Names: {0}", string.Join(",", context.Scheduler.GetCalendarNames()));
 			outputMetadata(context.Scheduler.GetMetaData());
-
+            Thread.Sleep(5000);
 			//TODO: dump more data here
 		}
 
