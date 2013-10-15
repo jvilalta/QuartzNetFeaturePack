@@ -10,7 +10,7 @@ namespace Quartz.FeaturePack.NancyWebApi
     public class JobExecutionContextsModule : NancyModule
     {
         public JobExecutionContextsModule()
-            : base("api/jobexecutioncontexts")
+            : base("/api/jobexecutioncontexts")
         {
             Get[""] = parameters =>
             {

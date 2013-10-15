@@ -37,8 +37,9 @@
     <Reference Include="Nancy">
       <HintPath>..\packages\Nancy.0.20.0\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.7\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Quartz">
       <HintPath>..\packages\Quartz.2.2\lib\net40\Quartz.dll</HintPath>
@@ -59,8 +60,11 @@
     <Compile Include="JsonScheduler.cs" />
     <Compile Include="JsonSchedulerContext.cs" />
     <Compile Include="JsonSchedulerListener.cs" />
+    <Compile Include="NancyBootstrapper.cs" />
     <Compile Include="SchedulerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptsModule.cs" />
+    <Compile Include="WebModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="job_scheduling_data_2_0.xsd">
@@ -73,6 +77,16 @@
       <Project>{1caf8b5c-074c-4a6d-8031-379c94b879f9}</Project>
       <Name>Quartz.FeaturePack.Plugins</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\jquery-2.0.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\backbone-min.js" />
+    <EmbeddedResource Include="Web\scripts\lodash.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
