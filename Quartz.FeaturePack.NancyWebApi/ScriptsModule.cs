@@ -12,9 +12,9 @@ namespace Quartz.FeaturePack.NancyWebApi
         public ScriptsModule()
             : base("/scripts")
         {
-            Get["/{script}"] = parameters =>
+            Get["/{folder}/{script}"] = parameters =>
             {
-                return new Nancy.Responses.EmbeddedFileResponse(GetType().Assembly, "Quartz.FeaturePack.NancyWebApi.Web.scripts", parameters.script);
+                return new Nancy.Responses.EmbeddedFileResponse(GetType().Assembly, "Quartz.FeaturePack.NancyWebApi.Web.scripts." + parameters.folder, parameters.script);
             };
         }
     }

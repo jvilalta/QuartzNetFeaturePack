@@ -82,11 +82,19 @@
     <EmbeddedResource Include="Web\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\jquery-2.0.3.min.js" />
+    <EmbeddedResource Include="Web\scripts\lib\jquery-2.0.3.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\backbone-min.js" />
-    <EmbeddedResource Include="Web\scripts\lodash.min.js" />
+    <EmbeddedResource Include="Web\scripts\lib\backbone-min.js" />
+    <EmbeddedResource Include="Web\scripts\lib\lodash.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\models\scheduler.js" />
+    <EmbeddedResource Include="Web\scripts\views\quartzAdmin.js" />
+    <EmbeddedResource Include="Web\scripts\views\scheduler.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Web\scripts\collections\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
