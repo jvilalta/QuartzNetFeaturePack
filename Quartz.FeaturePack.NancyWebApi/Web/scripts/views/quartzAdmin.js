@@ -6,6 +6,7 @@ quartzAdmin.View = Backbone.View.extend({
     el: '#quartzAdmin',
     initialize: function () {
         this.schedulerView = new quartzAdmin.SchedulerView();
+        this.scheduledJobs = new quartzAdmin.ScheduledJobsView();
     },
     render: function () {
     }

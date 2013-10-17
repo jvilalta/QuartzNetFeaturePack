@@ -2,6 +2,7 @@
 /// <reference path=lodash.min.js" />
 
 var quartzAdmin = quartzAdmin || {};
+
 quartzAdmin.SchedulerView = Backbone.View.extend({
     el: '#scheduler',
     className: 'scheduler',

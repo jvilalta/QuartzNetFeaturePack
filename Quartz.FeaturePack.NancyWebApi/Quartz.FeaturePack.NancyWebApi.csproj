@@ -93,9 +93,15 @@
     <EmbeddedResource Include="Web\scripts\views\quartzAdmin.js" />
     <EmbeddedResource Include="Web\scripts\views\schedulerView.js" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\collections\schedulerCollection.js" />
+    <EmbeddedResource Include="Web\scripts\models\scheduledJob.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\collections\scheduledJobsCollection.js" />
+    <EmbeddedResource Include="Web\scripts\views\scheduledJobsView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\views\jobDetailView.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
