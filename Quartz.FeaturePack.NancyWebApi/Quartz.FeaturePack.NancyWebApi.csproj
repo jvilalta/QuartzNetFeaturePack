@@ -91,10 +91,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Web\scripts\models\scheduler.js" />
     <EmbeddedResource Include="Web\scripts\views\quartzAdmin.js" />
-    <EmbeddedResource Include="Web\scripts\views\scheduler.js" />
+    <EmbeddedResource Include="Web\scripts\views\schedulerView.js" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Web\scripts\collections\" />
+    <EmbeddedResource Include="Web\scripts\collections\schedulerCollection.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿/// <reference path=backbone-min.js" />
 /// <reference path=lodash.min.js" />
-var Scheduler = Backbone.Model.extend({
-
+var quartzAdmin = quartzAdmin || {};
+quartzAdmin.Scheduler = Backbone.Model.extend({
+    urlRoot:'/api/scheduler'
 });
