@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CssModule.cs" />
     <Compile Include="JobExecutionContextsModule.cs" />
     <Compile Include="JobsModule.cs" />
     <Compile Include="JsonJobExecutionContext.cs" />
@@ -102,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Web\scripts\views\jobDetailView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\css\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\scripts\lib\bootstrap.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
