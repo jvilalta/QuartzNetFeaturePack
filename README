@@ -14,6 +14,12 @@ All scheduled jobs: http://localhost:8000/jobs
 Job execution history: http://localhost:8000/jobs/history
 Currently running jobs: http://localhost:8000/jobs/running
 
+To access the embedded Quart.Net management interface, go to http://localhost:8888
+To access the embedded JSON API:
+http://localhost:8888/api/scheduler (scheduler info)
+http://localhost:8888/api/jobs (scheduled jobs info)
+http://localhost:8888/api/jobexecutioncontexts (running jobs info)
+
 CONTRIBUTING
 Contributions are welcome. Please create a pull request to have your code merged. Also, please configure your GIT client to leave line endings as they are.
 
