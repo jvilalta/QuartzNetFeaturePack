@@ -56,11 +56,13 @@
     <Compile Include="CssModule.cs" />
     <Compile Include="JobExecutionContextsModule.cs" />
     <Compile Include="JobsModule.cs" />
+    <Compile Include="JsonJob.cs" />
     <Compile Include="JsonJobExecutionContext.cs" />
     <Compile Include="JsonJobListener.cs" />
     <Compile Include="JsonScheduler.cs" />
     <Compile Include="JsonSchedulerContext.cs" />
     <Compile Include="JsonSchedulerListener.cs" />
+    <Compile Include="JsonTrigger.cs" />
     <Compile Include="NancyBootstrapper.cs" />
     <Compile Include="SchedulerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

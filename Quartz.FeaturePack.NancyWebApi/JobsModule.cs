@@ -16,7 +16,7 @@ namespace Quartz.FeaturePack.NancyWebApi
             Get[""] = parameters =>
             {
                 var scheduler = NancyWebApiPlugin.Scheduler;
-                var jobs = new List<IJobDetail>();
+                var jobs = new List<JsonJob>();
                 var jobGroupNames = scheduler.GetJobGroupNames();
                 if (jobGroupNames != null)
                 {
@@ -24,7 +24,9 @@ namespace Quartz.FeaturePack.NancyWebApi
                     {
                         foreach (var key in scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(name)))
                         {
-                            jobs.Add(scheduler.GetJobDetail(key));
+                            var job = scheduler.GetJobDetail(key);
+                            var triggers = scheduler.GetTriggersOfJob(job.Key);
+                            jobs.Add(new JsonJob(job, triggers));
                         }
                     }
                 }
