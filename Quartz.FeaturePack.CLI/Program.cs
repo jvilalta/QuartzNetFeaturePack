@@ -10,31 +10,29 @@ namespace Quartz.FeaturePack.CLI
 	{
 		static void Main(string[] args)
 		{
-			Host host = HostFactory.New(x =>
+			var exiteCode = HostFactory.Run(x =>
 			{
 				x.Service<IQuartzServer>(s =>
 				{
-					s.SetServiceName("quartz.server");
-					s.ConstructUsing(builder =>
+					s.ConstructUsing(name =>
 					{
 						QuartzServer server = new QuartzServer();
 						server.Initialize();
 						return server;
 					});
-					s.WhenStarted(server => server.Start());
-					s.WhenPaused(server => server.Pause());
-					s.WhenContinued(server => server.Resume());
-					s.WhenStopped(server => server.Stop());
+                    s.WhenStarted(server => server.Start());
+                    s.WhenPaused(server => server.Pause());
+                    s.WhenContinued(server => server.Resume());
+                    s.WhenStopped(server => server.Stop());
 				});
 
 				x.RunAsLocalSystem();
 
 				x.SetDescription("Quartz.Net Server");
 				x.SetDisplayName("Quartz.Net Server");
-				x.SetServiceName("Quartz.Net Server");
+				x.SetServiceName("Quartz.NetServer");
 			});
 
-			host.Run();
 		}
 	}
 }
