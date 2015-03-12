@@ -17,7 +17,26 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  
+  <xs:complexType name="listeners">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="schedulerListener" type="schedulerListener" maxOccurs="unbounded" minOccurs="0"></xs:element>
+      <xs:element name="triggerListener" type="triggerListener" maxOccurs="unbounded" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="schedulerListener">
+    <xs:sequence maxOccurs="1">
 
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="triggerListener">
+    <xs:sequence maxOccurs="1">
+      
+    </xs:sequence>
+  </xs:complexType>
+  
   <xs:complexType name="calendars">
     <xs:sequence maxOccurs="unbounded">
       <xs:element name="cronCalendar" type="cronCalendar" maxOccurs="unbounded" minOccurs="0"></xs:element>
