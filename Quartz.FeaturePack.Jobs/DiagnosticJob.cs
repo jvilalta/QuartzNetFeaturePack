@@ -18,14 +18,13 @@ namespace Quartz.FeaturePack.Jobs
 		{
 			_Log.InfoFormat("Calendar Names: {0}", string.Join(",", context.Scheduler.GetCalendarNames()));
 			outputMetadata(context.Scheduler.GetMetaData());
-            Thread.Sleep(5000);
-			//TODO: dump more data here
 		}
 
 		private void outputMetadata(SchedulerMetaData metaData)
 		{
-			_Log.InfoFormat("Scheduler Metadata:\nRunning Since: {0}", metaData.RunningSince);
-		}
+			_Log.DebugFormat("Scheduler Metadata:\nRunning Since: {0}", metaData.RunningSince);
+            //TODO: dump more data here
+        }
 
 		#endregion
 		private static readonly ILog _Log = LogManager.GetLogger(typeof(DiagnosticJob));
