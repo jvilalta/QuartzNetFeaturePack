@@ -7,7 +7,7 @@ using Quartz.Listener;
 namespace Quartz.FeaturePack.Jobs
 {
     /// <summary>
-    /// This job adds a listener to the scheduler. Set the "type" property of the job to the Type of the listener 
+    /// This job adds a listener to the scheduler. Set the "job-type" property of the job to the  <see cref="Type">Type</see> of the listener 
     /// that you want to add to the scheduler. This job is handy if you want to add a listener to the scheduler via 
     /// the quartz_jobs.xml file. The listener will be added with an EverythingMatcher, so it will match all jobs.
     /// </summary>
@@ -20,14 +20,15 @@ namespace Quartz.FeaturePack.Jobs
         /// <param name="context"></param>
         public void Execute(IJobExecutionContext context)
         {
-            string type = context.MergedJobDataMap.GetString("type");
+            string type = context.MergedJobDataMap.GetString(JOB_TYPE);
             if (string.IsNullOrEmpty(type))
             {
-                throw new ArgumentNullException("type", "Could not find a parameter named type in the job's datamap.");
+                throw new ArgumentNullException(JOB_TYPE, "Could not find a parameter named type in the job's datamap.");
             }
             IJobListener listener = (IJobListener)Type.GetType(type).GetConstructor(new Type[] { }).Invoke(null);
             IMatcher<JobKey> matcher = Quartz.Impl.Matchers.EverythingMatcher<JobKey>.AllJobs();
             context.Scheduler.ListenerManager.AddJobListener(listener, matcher);
         }
+        public static string JOB_TYPE = "job-type";
     }
 }
