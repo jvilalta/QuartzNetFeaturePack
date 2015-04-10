@@ -13,7 +13,12 @@ namespace Quartz.FeaturePack.NancyWebApi
         public SchedulerModule()
             : base("/api/scheduler")
         {
-            Get[""] = parameters => { return Newtonsoft.Json.JsonConvert.SerializeObject(new JsonScheduler(NancyWebApiPlugin.Scheduler)); };
+            Get[""] = parameters =>
+            {
+                var response = Response.AsJson(new JsonScheduler(NancyWebApiPlugin.Scheduler));
+                response.Headers.Add("Access-Control-Allow-Origin","*");
+                return response ;
+            };
         }
     }
 }

@@ -122,9 +122,10 @@
     </Content>
     <Content Include="Web\karma.conf.js" />
     <Content Include="Web\protractor.conf.js" />
-    <Content Include="Web\src\app.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Web\src\app.html" />
+    <Content Include="Web\src\app.js" />
+    <Content Include="Web\src\scheduler.html" />
+    <Content Include="Web\src\scheduler.js" />
     <Content Include="Web\src\index.html" />
     <Content Include="Web\styles\styles.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -138,11 +139,6 @@
     <Content Include="Web\test\unit\app.spec.js" />
     <Content Include="Web\test\unit\child-router.spec.js" />
     <Content Include="Web\test\unit\flickr.spec.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Web\src\app.ts">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
