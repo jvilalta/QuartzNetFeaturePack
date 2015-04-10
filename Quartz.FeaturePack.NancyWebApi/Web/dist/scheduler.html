@@ -1,23 +1,24 @@
 <template>
     <section>
-        <h2>Scheduler</h2>
-        <div>
-            <p>Scheduler Name: ${scheduler.schedulerName}</p>
-            <p></p>
-            <p>Scheduler InstanceId: ${scheduler.schedulerInstanceId}</p>
-            <p>Job Store: ${scheduler.jobStoreType}</p>
-            <p>Running Since: ${scheduler.runningSince}</p>
-            <p>Thread Pool Size: ${scheduler.threadPoolSize}</p>
-            <p>Version: ${scheduler.version}</p>
-
-            <p>isShutdown: ${scheduler.isShutdown}</p>
-            <p>inStandbyMode: ${scheduler.inStandbyMode}</p>
-            <p>jobStoreClustered: ${scheduler.jobStoreClustered}</p>
-            <p>jobStoreSupportsPersistence: ${scheduler.jobStoreSupportsPersistence}</p>
-            <p>numberOfJobsExecuted: ${scheduler.numberOfJobsExecuted}</p>
-            <p>schedulerRemote: ${scheduler.schedulerRemote}</p>
-            <p>schedulerType: ${scheduler.schedulerType}</p>
-            <p>threadPoolType: ${scheduler.threadPoolType}</p>
-        </div>
+        <div class="container">
+            <h2>Scheduler Data</h2>
+            <table>
+                <thead><tr><td>Property</td><td>Value</td></tr></thead>
+                <tbody>
+                    <tr><td>Scheduler Name</td><td>${scheduler.schedulerName}</td></tr>
+                    <tr><td>Scheduler InstanceId</td><td>${scheduler.schedulerInstanceId}</td></tr>
+                    <tr><td>Job Store</td><td>${scheduler.jobStoreType}</td></tr>
+                    <tr><td>Running Since</td><td>${scheduler.runningSince}</td></tr>
+                    <tr><td>Thread Pool Size</td><td>${scheduler.threadPoolSize}</td></tr>
+                    <tr><td>Version</td><td>${scheduler.version}</td></tr>
+                    <tr><td>isShutdown</td><td>${scheduler.isShutdown}</td></tr>
+                    <tr><td>inStandbyMode</td><td>${scheduler.inStandbyMode}</td></tr>
+                    <tr><td>jobStoreClustered</td><td>${scheduler.jobStoreClustered}</td></tr>
+                    <tr><td>numberOfJobsExecuted</td><td>${scheduler.numberOfJobsExecuted}</td></tr>
+                    <tr><td>schedulerRemote</td><td>${scheduler.schedulerRemote}</td></tr>
+                    <tr><td>schedulerType</td><td>${scheduler.schedulerType}</td></tr>
+                    <tr><td>threadPoolType</td><td>${scheduler.threadPoolType}</td></tr>
+                </tbody>
+            </table>
     </section>
 </template>
