@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Quartz.Impl.Matchers;
+using Newtonsoft.Json;
 
 namespace Quartz.FeaturePack.NancyWebApi
 {
@@ -31,7 +32,13 @@ namespace Quartz.FeaturePack.NancyWebApi
                     }
                 }
 
-                return Newtonsoft.Json.JsonConvert.SerializeObject(jobs);
+                return JsonConvert.SerializeObject(jobs);
+            };
+
+            Put[""] = parameters =>
+            {
+                IJob job = null;
+                return JsonConvert.SerializeObject(job);
             };
 
         }

@@ -1,48 +1,20 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Quartz.Net Scheduler Administration</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
-</head>
-<body>
-    <h1>Quartz.Net Scheduler Administration</h1>
-    <div id="quartzAdmin">
-        <div>
-            <h2>Scheduler Information</h2>
-            <div id="scheduler"></div>
-        </div>
-        <div>
-            <h2>Scheduled Jobs</h2>
-            <div id="scheduledJobs"></div>
-        </div>
+<!doctype html>
+<html>
+  <head>
+    <title>Aurelia</title>
+      <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  </head>
+  <body aurelia-app>
+    <div class="splash">
+      <div class="message">Aurelia Navigation Skeleton</div>
+      <i class="fa fa-spinner fa-spin"></i>
     </div>
-    <script type="text/template" id="scheduler-template">
-        <div>Scheduler Name: <%= schedulerName %></div>
-        <div>Scheduler InstanceId: <%= schedulerInstanceId %></div>
-        <div>Job Store: <%= jobStoreType %></div>
-        <div>Running Since: <%= runningSince %></div>
-        <div>Thread Pool Size: <%= threadPoolSize %></div>
-        <div>Version: <%= version %></div>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.import('aurelia-bootstrapper');
     </script>
-    <script type="text/template" id="jobDetail-template">
-        <div>
-            <div>Job Name: <%= Name %></div>
-            <div>Description: <%= Description %></div>
-            <div>Job Type: <%= JobType %></div>
-        </div>
-    </script>
-    <script src="scripts/lib/jquery-2.0.3.min.js" type="text/javascript"></script>
-    <script src="scripts/lib/lodash.min.js" type="text/javascript"></script>
-    <script src="scripts/lib/backbone-min.js" type="text/javascript"></script>
-    <script src="scripts/lib/bootstrap.min.js" type="text/javascript"></script>
-    <script src="scripts/models/scheduler.js" type="text/javascript"></script>
-    <script src="scripts/models/scheduledJob.js" type="text/javascript"></script>
-    <script src="scripts/collections/scheduledJobsCollection.js" type="text/javascript"></script>
-    <script src="scripts/views/jobDetailView.js" type="text/javascript"></script>
-    <script src="scripts/views/scheduledJobsView.js" type="text/javascript"></script>
-    <script src="scripts/views/schedulerView.js" type="text/javascript"></script>
-    <script src="scripts/views/quartzAdmin.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>

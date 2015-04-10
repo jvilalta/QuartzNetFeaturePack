@@ -137,6 +137,11 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>robocopy $(ProjectDir)..\Quartz.FeaturePack.NancyWebApi\Web\jspm_packages $(TargetDir)Web\jspm_packages /MIR
+
+robocopy $(ProjectDir)..\Quartz.FeaturePack.NancyWebApi\Web\dist $(TargetDir)Web\dist /MIR</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

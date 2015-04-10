@@ -2,6 +2,7 @@
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 using Nancy.ViewEngines;
+using Nancy.Conventions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +26,17 @@ namespace Quartz.FeaturePack.NancyWebApi
             }
         }
 
+        protected override void ConfigureConventions(Nancy.Conventions.NancyConventions nancyConventions)
+        {
+            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("/", @"Web\"));
+            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("/Styles", @"Web\styles"));
+            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("/jspm_packages", @"Web\jspm_packages"));
+            nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("/dist", @"Web\dist"));
+            base.ConfigureConventions(nancyConventions);
+        }
         private void OnConfigurationBuilder(NancyInternalConfiguration internalConfiguration)
         {
-            internalConfiguration.ViewLocationProvider = typeof(ResourceViewLocationProvider);
+            //internalConfiguration.ViewLocationProvider = typeof(ResourceViewLocationProvider);
         }
     }
 }

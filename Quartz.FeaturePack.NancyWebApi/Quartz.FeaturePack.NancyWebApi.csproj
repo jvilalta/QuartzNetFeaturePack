@@ -81,15 +81,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="scheduler-app\.editorconfig" />
-    <None Include="scheduler-app\.jshintrc" />
-    <None Include="scheduler-app\.npmignore" />
-    <None Include="scheduler-app\CONTRIBUTING.md" />
-    <None Include="scheduler-app\doc\api.json" />
-    <None Include="scheduler-app\doc\CHANGELOG.md" />
-    <None Include="scheduler-app\LICENSE" />
-    <None Include="scheduler-app\package.json" />
-    <None Include="scheduler-app\README.md" />
+    <None Include="Web\.editorconfig" />
+    <None Include="Web\.jshintrc" />
+    <None Include="Web\.npmignore" />
+    <None Include="Web\CONTRIBUTING.md" />
+    <None Include="Web\doc\api.json" />
+    <None Include="Web\doc\CHANGELOG.md" />
+    <None Include="Web\LICENSE" />
+    <None Include="Web\package.json" />
+    <None Include="Web\README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quartz.FeaturePack.Plugins\Quartz.FeaturePack.Plugins.csproj">
@@ -98,81 +98,57 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Web\index.html" />
+    <Content Include="Web\.gitignore" />
+    <Content Include="Web\aurelia.protractor.js" />
+    <Content Include="Web\build\args.js" />
+    <Content Include="Web\build\babel-options.js" />
+    <Content Include="Web\build\paths.js" />
+    <Content Include="Web\build\tasks\build.js" />
+    <Content Include="Web\build\tasks\clean.js" />
+    <Content Include="Web\build\tasks\dev.js" />
+    <Content Include="Web\build\tasks\doc.js" />
+    <Content Include="Web\build\tasks\e2e.js" />
+    <Content Include="Web\build\tasks\lint.js" />
+    <Content Include="Web\build\tasks\prepare-release.js" />
+    <Content Include="Web\build\tasks\serve.js" />
+    <Content Include="Web\build\tasks\test.js" />
+    <Content Include="Web\build\tasks\watch.js" />
+    <Content Include="Web\config.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web\gulpfile.js" />
+    <Content Include="Web\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web\karma.conf.js" />
+    <Content Include="Web\protractor.conf.js" />
+    <Content Include="Web\src\app.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web\src\index.html" />
+    <Content Include="Web\styles\styles.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web\test\e2e\dist\demo.spec.js" />
+    <Content Include="Web\test\e2e\dist\skeleton.po.js" />
+    <Content Include="Web\test\e2e\dist\welcome.po.js" />
+    <Content Include="Web\test\e2e\src\demo.spec.js" />
+    <Content Include="Web\test\e2e\src\skeleton.po.js" />
+    <Content Include="Web\test\e2e\src\welcome.po.js" />
+    <Content Include="Web\test\unit\app.spec.js" />
+    <Content Include="Web\test\unit\child-router.spec.js" />
+    <Content Include="Web\test\unit\flickr.spec.js" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\lib\jquery-2.0.3.min.js" />
+    <TypeScriptCompile Include="Web\src\app.ts">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </TypeScriptCompile>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\lib\backbone-min.js" />
-    <EmbeddedResource Include="Web\scripts\lib\lodash.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\models\scheduler.js" />
-    <EmbeddedResource Include="Web\scripts\views\quartzAdmin.js" />
-    <EmbeddedResource Include="Web\scripts\views\schedulerView.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\models\scheduledJob.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\collections\scheduledJobsCollection.js" />
-    <EmbeddedResource Include="Web\scripts\views\scheduledJobsView.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\views\jobDetailView.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\css\bootstrap.min.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Web\scripts\lib\bootstrap.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="scheduler-app\.gitignore" />
-    <Content Include="scheduler-app\aurelia.protractor.js" />
-    <Content Include="scheduler-app\build\args.js" />
-    <Content Include="scheduler-app\build\babel-options.js" />
-    <Content Include="scheduler-app\build\paths.js" />
-    <Content Include="scheduler-app\build\tasks\build.js" />
-    <Content Include="scheduler-app\build\tasks\clean.js" />
-    <Content Include="scheduler-app\build\tasks\dev.js" />
-    <Content Include="scheduler-app\build\tasks\doc.js" />
-    <Content Include="scheduler-app\build\tasks\e2e.js" />
-    <Content Include="scheduler-app\build\tasks\lint.js" />
-    <Content Include="scheduler-app\build\tasks\prepare-release.js" />
-    <Content Include="scheduler-app\build\tasks\serve.js" />
-    <Content Include="scheduler-app\build\tasks\test.js" />
-    <Content Include="scheduler-app\build\tasks\watch.js" />
-    <Content Include="scheduler-app\config.js" />
-    <Content Include="scheduler-app\dist\app.html" />
-    <Content Include="scheduler-app\dist\app.js" />
-    <Content Include="scheduler-app\dist\child-router.html" />
-    <Content Include="scheduler-app\dist\child-router.js" />
-    <Content Include="scheduler-app\dist\flickr.html" />
-    <Content Include="scheduler-app\dist\flickr.js" />
-    <Content Include="scheduler-app\dist\nav-bar.html" />
-    <Content Include="scheduler-app\dist\nav-bar.js" />
-    <Content Include="scheduler-app\dist\welcome.html" />
-    <Content Include="scheduler-app\dist\welcome.js" />
-    <Content Include="scheduler-app\gulpfile.js" />
-    <Content Include="scheduler-app\index.html" />
-    <Content Include="scheduler-app\karma.conf.js" />
-    <Content Include="scheduler-app\protractor.conf.js" />
-    <Content Include="scheduler-app\src\index.html" />
-    <Content Include="scheduler-app\styles\styles.css" />
-    <Content Include="scheduler-app\test\e2e\dist\demo.spec.js" />
-    <Content Include="scheduler-app\test\e2e\dist\skeleton.po.js" />
-    <Content Include="scheduler-app\test\e2e\dist\welcome.po.js" />
-    <Content Include="scheduler-app\test\e2e\src\demo.spec.js" />
-    <Content Include="scheduler-app\test\e2e\src\skeleton.po.js" />
-    <Content Include="scheduler-app\test\e2e\src\welcome.po.js" />
-    <Content Include="scheduler-app\test\unit\app.spec.js" />
-    <Content Include="scheduler-app\test\unit\child-router.spec.js" />
-    <Content Include="scheduler-app\test\unit\flickr.spec.js" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
