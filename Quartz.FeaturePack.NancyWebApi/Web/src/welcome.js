@@ -1,7 +1,7 @@
 ﻿export class Welcome {
-  public heading: string;
-  public firstName: string;
-  public lastName: string;
+  heading: string;
+  firstName: string;
+  lastName: string;
 
   constructor() {
     this.heading = "Welcome to the Aurelia Navigation App (VS/TS)!";
