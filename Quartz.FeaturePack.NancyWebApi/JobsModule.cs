@@ -31,8 +31,9 @@ namespace Quartz.FeaturePack.NancyWebApi
                         }
                     }
                 }
-
-                return JsonConvert.SerializeObject(jobs);
+                var response = Response.AsJson(jobs);
+                response.Headers.Add("Access-Control-Allow-Origin", "*");
+                return response;
             };
 
             Put[""] = parameters =>

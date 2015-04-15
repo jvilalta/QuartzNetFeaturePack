@@ -10,7 +10,8 @@ export class App {
             {
                 config.title = 'Quartz.Net Manager';
         config.map([
-          { route: ['','scheduler'],  moduleId: './scheduler',      nav: true, title:'Scheduler' }
+          { route: ['','scheduler'],  moduleId: './scheduler',      nav: true, title:'Scheduler' },
+        { route: 'jobs',  moduleId: './jobs',      nav: true, title:'Jobs' }
         ]);
     });
 }

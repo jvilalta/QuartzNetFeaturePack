@@ -124,6 +124,8 @@
     <Content Include="Web\protractor.conf.js" />
     <Content Include="Web\src\app.html" />
     <Content Include="Web\src\app.js" />
+    <Content Include="Web\src\jobs.html" />
+    <Content Include="Web\src\jobs.js" />
     <Content Include="Web\src\scheduler.html" />
     <Content Include="Web\src\scheduler.js" />
     <Content Include="Web\src\index.html" />
