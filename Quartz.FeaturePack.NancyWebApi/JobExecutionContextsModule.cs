@@ -1,9 +1,6 @@
 ﻿using Nancy;
 using Quartz.FeaturePack.Plugins;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Quartz.FeaturePack.NancyWebApi
 {
@@ -12,17 +9,17 @@ namespace Quartz.FeaturePack.NancyWebApi
         public JobExecutionContextsModule()
             : base("/api/jobexecutioncontexts")
         {
-            Get[""] = parameters =>
+            Get("", parameters =>
             {
                 var scheduler = NancyWebApiPlugin.Scheduler;
-                var jobExecutionContexts = scheduler.GetCurrentlyExecutingJobs();
+                var jobExecutionContexts = scheduler.GetCurrentlyExecutingJobs().Result;
                 var jsonContexts = new List<JsonJobExecutionContext>();
                 foreach (var context in jobExecutionContexts)
                 {
                     jsonContexts.Add(new JsonJobExecutionContext(context));
                 }
                 return Newtonsoft.Json.JsonConvert.SerializeObject(jsonContexts);
-            };
+            });
 
         }
     }

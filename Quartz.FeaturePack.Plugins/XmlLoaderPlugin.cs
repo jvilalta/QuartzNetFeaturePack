@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Quartz.Impl.Calendar;
 using Quartz.Spi;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Linq;
-using Quartz.Impl.Calendar;
 
 namespace Quartz.FeaturePack.Plugins
 {
@@ -135,6 +135,21 @@ namespace Quartz.FeaturePack.Plugins
 
         public void Start()
         {
+        }
+
+        public Task Initialize(string pluginName, IScheduler scheduler, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Start(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Shutdown(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
         }
     }
 }

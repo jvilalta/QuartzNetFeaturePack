@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Quartz.Listener;
+using System.Threading.Tasks;
 
 namespace Quartz.FeaturePack.Jobs
 {
@@ -29,6 +26,12 @@ namespace Quartz.FeaturePack.Jobs
             IMatcher<JobKey> matcher = Quartz.Impl.Matchers.EverythingMatcher<JobKey>.AllJobs();
             context.Scheduler.ListenerManager.AddJobListener(listener, matcher);
         }
+
+        Task IJob.Execute(IJobExecutionContext context)
+        {
+            throw new NotImplementedException();
+        }
+
         public static string JOB_TYPE = "job-type";
     }
 }

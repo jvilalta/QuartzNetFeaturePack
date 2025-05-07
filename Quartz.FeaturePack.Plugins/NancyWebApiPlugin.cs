@@ -1,9 +1,8 @@
 ﻿using Nancy.Hosting.Self;
 using Quartz.Spi;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Quartz.FeaturePack.Plugins
 {
@@ -25,6 +24,22 @@ namespace Quartz.FeaturePack.Plugins
         {
             _NancyHost.Start();
         }
+
+        public Task Initialize(string pluginName, IScheduler scheduler, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Start(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Shutdown(CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         private static NancyHost _NancyHost;
         public static IScheduler Scheduler;
     }

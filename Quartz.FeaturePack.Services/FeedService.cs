@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
-using System.ServiceModel.Syndication;
+﻿using Quartz.FeaturePack.Listeners;
 using Quartz.Impl.Matchers;
-using Quartz.FeaturePack.Listeners;
+using System;
+using System.Collections.Generic;
+using System.ServiceModel;
+using System.ServiceModel.Syndication;
+using System.Text;
 
 namespace Quartz.FeaturePack.Services
 {
@@ -21,7 +19,7 @@ namespace Quartz.FeaturePack.Services
         }
         public SyndicationFeedFormatter GetRunningJobs(string format)
         {
-            var jobs = _Scheduler.GetCurrentlyExecutingJobs();
+            var jobs = _Scheduler.GetCurrentlyExecutingJobs().Result;
             SyndicationFeed feed = new SyndicationFeed();
             List<SyndicationItem> items = new List<SyndicationItem>();
             foreach (var job in jobs)
@@ -56,16 +54,16 @@ namespace Quartz.FeaturePack.Services
 
         public SyndicationFeedFormatter GetJobs(string format)
         {
-            var groups = _Scheduler.GetJobGroupNames();
+            var groups = _Scheduler.GetJobGroupNames().Result;
             SyndicationFeed feed = new SyndicationFeed();
             List<SyndicationItem> items = new List<SyndicationItem>();
             foreach (var group in groups)
             {
-                var jobKeys = _Scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(group));
+                var jobKeys = _Scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(group)).Result;
 
                 foreach (var jobKey in jobKeys)
                 {
-                    var job = _Scheduler.GetJobDetail(jobKey);
+                    var job = _Scheduler.GetJobDetail(jobKey).Result;
                     SyndicationItem item = new SyndicationItem();
                     item.Id = job.Key.ToString();
                     item.LastUpdatedTime = DateTime.UtcNow;

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Quartz.FeaturePack.NancyWebApi
 {
@@ -25,16 +23,16 @@ namespace Quartz.FeaturePack.NancyWebApi
                 schedulerListeners.Add(new JsonSchedulerListener(item));
             }
             schedulerContext = new JsonSchedulerContext(scheduler.Context);
-            jobStoreClustered = scheduler.GetMetaData().JobStoreClustered;
-            jobStoreSupportsPersistence = scheduler.GetMetaData().JobStoreSupportsPersistence;
-            jobStoreType = scheduler.GetMetaData().JobStoreType.FullName;
-            numberOfJobsExecuted = scheduler.GetMetaData().NumberOfJobsExecuted;
-            runningSince = scheduler.GetMetaData().RunningSince;
-            schedulerRemote = scheduler.GetMetaData().SchedulerRemote;
-            schedulerType = scheduler.GetMetaData().SchedulerType.FullName;
-            threadPoolSize = scheduler.GetMetaData().ThreadPoolSize;
-            threadPoolType = scheduler.GetMetaData().ThreadPoolType.FullName;
-            version = scheduler.GetMetaData().Version;
+            jobStoreClustered = scheduler.GetMetaData().Result.JobStoreClustered;
+            jobStoreSupportsPersistence = scheduler.GetMetaData().Result.JobStoreSupportsPersistence;
+            jobStoreType = scheduler.GetMetaData().Result.JobStoreType.FullName;
+            numberOfJobsExecuted = scheduler.GetMetaData().Result.NumberOfJobsExecuted;
+            runningSince = scheduler.GetMetaData().Result.RunningSince;
+            schedulerRemote = scheduler.GetMetaData().Result.SchedulerRemote;
+            schedulerType = scheduler.GetMetaData().Result.SchedulerType.FullName;
+            threadPoolSize = scheduler.GetMetaData().Result.ThreadPoolSize;
+            threadPoolType = scheduler.GetMetaData().Result.ThreadPoolType.FullName;
+            version = scheduler.GetMetaData().Result.Version;
         }
         public string schedulerName { get; set; }
 

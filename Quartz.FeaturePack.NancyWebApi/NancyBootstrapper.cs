@@ -1,12 +1,9 @@
 ﻿using Nancy;
 using Nancy.Bootstrapper;
+using Nancy.Conventions;
 using Nancy.TinyIoc;
 using Nancy.ViewEngines;
-using Nancy.Conventions;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Quartz.FeaturePack.NancyWebApi
 {
@@ -18,7 +15,8 @@ namespace Quartz.FeaturePack.NancyWebApi
             var assembly = GetType().Assembly;
             ResourceViewLocationProvider.RootNamespaces.Add(assembly, "Quartz.FeaturePack.NancyWebApi.Web");
         }
-        protected override NancyInternalConfiguration InternalConfiguration
+
+        protected override Func<ITypeCatalog, NancyInternalConfiguration> InternalConfiguration
         {
             get
             {
@@ -34,9 +32,10 @@ namespace Quartz.FeaturePack.NancyWebApi
             nancyConventions.StaticContentsConventions.Add(StaticContentConventionBuilder.AddDirectory("/dist", @"Web\dist"));
             base.ConfigureConventions(nancyConventions);
         }
+
         private void OnConfigurationBuilder(NancyInternalConfiguration internalConfiguration)
         {
-            //internalConfiguration.ViewLocationProvider = typeof(ResourceViewLocationProvider);
+            //internalConfiguration.ViewLocationProvider = typeof(ResourceViewLocationProvider);  
         }
     }
 }

@@ -25,3 +25,4 @@ obj/
 [Rr]elease*/
 Quartz.FeaturePack.VisualState.xml
 packages*/
+.vs/
